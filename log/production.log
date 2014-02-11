@@ -1,0 +1,5 @@
+E, [2013-09-23T21:16:05.157689 #6941] ERROR -- : SQLite3::SQLException: no such table: alerts: SELECT "alerts".* FROM "alerts"  WHERE (scheduled_time < '2013-09-24 01:16:05')
+E, [2013-09-23T21:18:04.803470 #6997] ERROR -- : SQLite3::SQLException: no such table: alerts: SELECT "alerts".* FROM "alerts"  WHERE (scheduled_time < '2013-09-24 01:18:04')
+E, [2013-09-23T21:20:05.379755 #7053] ERROR -- : SQLite3::SQLException: no such table: alerts: SELECT "alerts".* FROM "alerts"  WHERE (scheduled_time < '2013-09-24 01:20:05')
+E, [2013-09-23T21:22:04.896247 #7110] ERROR -- : SQLite3::SQLException: no such table: alerts: SELECT "alerts".* FROM "alerts"  WHERE (scheduled_time < '2013-09-24 01:22:04')
+E, [2013-09-23T21:24:05.520078 #7167] ERROR -- : SQLite3::SQLException: no such table: alerts: SELECT "alerts".* FROM "alerts"  WHERE (scheduled_time < '2013-09-24 01:24:05')

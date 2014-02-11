@@ -1,0 +1,85 @@
+
+<%= form_for(@alert) do |f| %>
+  <% if @alert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alert.errors.count, "error") %> prohibited this alert from being saved:</h2>
+
+      <ul>
+      <% @alert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="large-8 columns">
+    <div class="field">  
+      <%= f.label :terms, 'What are you looking for?' %><br/>
+      <%= f.text_field :terms, :placeholder => "Honda Civic, guitar, 1 Bedroom" %>
+      <span class="help">Try broad search terms, like stainless pot or road bike to get more results.  You can use quotes to search for the exact term, like "Dumb and Dumber".  If you search for honda civic, toyota prius your search will turned into "Honda Civic" OR "Toyota Prius", returning exact matches for either.</span>
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <div class="field">
+      <%= f.label :category, 'Category' %><br/>
+      <%= f.select(:category, @tap_categories, { include_blank: true }, {:class => 'chosen-select'}) %>
+      <span class="help">Search by general category like All Vehicles, or by something more specific like Real Estate - Apartments.</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <div class="field">  
+      <%= f.label :zipcode, 'Where?' %><br/>
+      <%= f.text_field :zipcode,  :placeholder => "ZIP code"  %>
+    </div>
+  </div>
+  <div class="large-6 columns">
+    <div class="field">  
+      <%= f.label :radius, 'Within' %><br/>
+      <%= f.select(:radius, @tap_radii, {}, {:class => 'chosen-select'}) %>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <div class="large-3 columns">
+    <div class="field-price">  
+      <%= f.label :price_min, "Minimum Price" %><br/>
+      <span class="dollar">$</span><%= f.text_field :price_min,  :placeholder => "USD" %>
+    </div>
+  </div>
+
+  <div class="large-3 columns">
+    <div class="field-price">  
+      <%= f.label :price_max, "Maximum Price" %><br/>
+      <span class="dollar">$</span><%= f.text_field :price_max,  :placeholder => "USD" %>
+    </div>
+  </div>
+
+  <div class="small-6 columns">
+    <div class="field">
+      <%= f.label :run_every, 'How often should we email you the results?' %><br>
+      <%= f.select(:run_every, @tap_time_options, {}, {:class => 'chosen-select'}) %>
+      <span class="help">We'll never email you more often than this, unless you're resetting your password.  And we'll never email unless we find something relevant.</span>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="small-6 columns">
+    <div class="actions">
+      <%= f.submit "Submit", :class => 'button' %> <%= link_to "Cancel", root_path, :class => 'button' %>
+    </div>
+  </div>
+</div>
+
+<% end %>

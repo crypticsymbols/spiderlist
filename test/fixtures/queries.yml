@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alert_id: 
+  key: MyString
+  value: MyString
+
+two:
+  alert_id: 
+  key: MyString
+  value: MyString

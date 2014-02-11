@@ -1,0 +1,14 @@
+<% if notice %>
+	<div class="large-12 columns">
+		<p id="notice"><%= notice %></p>
+	</div>
+<% end %>
+
+<div class="large-12 columns">
+<h1><%= @title %></h1>
+
+	<%= link_to 'Back to list', root_path, :class => 'button' %><%= link_to 'Edit This Alert', edit_alert_path(@alert), :class => 'button right' %>
+
+	<%= render 'results' %>
+
+</div>

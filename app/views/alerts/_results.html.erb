@@ -1,0 +1,36 @@
+<div class="large-12 columns">
+
+	<% if current_user.admin? %>
+		<%= @query %>
+
+		<%= @debug %>
+	<% end %>
+
+	<%= render 'pager' %>
+
+	<hr/>
+
+	<ul class="zebra">
+		<% if !@results.blank? %>
+			<% @results.each do |r| %>
+				<li class="row">
+					<ul class="result row">
+						<li class="large-6 columns"><%= link_to r['heading'], r['external_url'], :target => "_blank" %></li>
+						<li class="large-2 columns"><%= Time.at(r['timestamp']).in_time_zone(current_user.time_zone).strftime('%m/%d/%Y at %I:%M%p') %></li>
+						<li class="large-2 columns"><%= r['location']['formatted_address'] %></li>
+						<li class="large-2 columns"><%= r['price'] %> | <%= r['source'] %></li>
+					</ul>
+				</li>
+			
+			<% end %>
+		<% else %>
+			<li>No results right now... You'll get an email when the bot finds something!  Or, you can <%= link_to('try a broader search', edit_alert_path(@alert)) %>.</li>
+		<% end %>
+	</ul>
+
+	<hr/>
+
+	<%= render 'pager' %>
+	
+</div>
+

@@ -1,0 +1,127 @@
+/*
+ */
+
+ @import 'foundation_and_overrides';
+ @import 'vars';
+ @import 'webicons';
+ @import 'chosen';
+
+.sticky {
+	background:$topbar-bg;
+	// position:fixed;
+	// top:0;
+	// width:100%;
+	nav{
+		max-width: $row-width;
+		margin:0 auto;
+	}
+}
+
+.footer{
+	margin-top:2em;
+	background:$topbar-bg;
+	color: $topbar-link-color;
+	> .row{
+		padding: 2em 0;
+	}
+}
+
+table{
+	width:100%;
+}
+
+body{
+	// padding-top: 50px;
+	> .row{
+		padding-top:20px;
+	}
+}
+
+ul.zebra{
+	li.row{
+		padding:1em;
+		&:nth-child(odd){
+			background:$lightgray;
+		}
+	}
+	li{
+		list-style: none;
+	}
+}
+ul.pager{
+	li{
+		list-style:none;
+		width:48%;
+		margin-left:0;
+		&:first-child{
+			margin-right:4%;
+		}
+		a{
+			margin:0
+		}
+	}
+}
+
+form{
+	.row{
+		padding:1em 0;
+	}
+}
+
+.field-price{
+	input{
+		width:90%;
+		float:left;
+	}
+	span.dollar{
+		width:10%;
+		float:left;
+		padding-top: 0.5em;
+		text-align:right;
+		padding-right:1%;
+	}
+}
+
+.chosen-container{
+	padding: 0.35em 0 1.5em 0;
+}
+
+span.help{
+	font-style: italic;
+	font-size:0.8em;
+}
+
+p#notice{
+	text-align: left;
+	border-radius: 5px;
+	background: #91daa2;
+	border: 2px solid #6acd8b;
+	padding:0.5em;
+}
+
+#error_explanation{
+	*{
+		font-size:16px;
+	}
+	li{
+		list-style: none;
+	}
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	border-radius: 5px;
+	background: #ce756c;
+	border: 2px solid #c3574d;
+	padding:0.5em;
+}
+
+.top-bar .social{
+	padding: 0 15px;
+	line-height: 45px;
+	background: $topbar-bg;
+	padding: 0.45em 0.7em;
+	a{
+		max-width:30px;
+	}
+}

@@ -1,0 +1,52 @@
+<div class="large-8 columns">
+  <h1>Your Alerts</h1>
+</div>
+
+<div class="large-4 columns">
+  <%= link_to 'Add a new alert »', new_alert_path, :class => "button large expand" %>
+</div>
+
+<% if notice %>
+  <div class="large-12 columns">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+
+<div class="large-8 columns">
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Where?</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Stop</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @alerts.each do |alert| %>
+        <tr>
+          <td><%= alert.terms %></td>
+          <td><%= alert.zipcode %></td>
+          <td><%= link_to 'View Results', alert_path(alert) %></td>
+          <td><%= link_to 'Edit', edit_alert_path(alert) %></td>
+          <td><%= link_to 'Stop', alert, method: :delete, data: { confirm: 'Are you sure?  This will immediately remove this alert from your account.' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if @alerts.empty? %>
+    <p>No active alerts.  <%= link_to('Add one now', new_alert_path) %>.</p>
+  <% end %>
+</div>
+
+<div class="large-4 columns">
+<h3>Getting started</h3>
+<p><strong>Alerts</strong> are just a set of criteria describing what you're looking for.</p>
+<p>Click "add alert" above to start our bot searching for what you want.  It will e-mail you when it finds items matching your criteria, with a link to view all the results if there are too many for the email.</p> 
+<p>Once you create an alert, you can edit or remove it at any time.</p>
+<p>Once you add an alert, you'll be able to find it on this page.  If there are too many results to fit into an email, you can browse them in full here.</p>
+<p>That's pretty much it!</p>
+</div>
+

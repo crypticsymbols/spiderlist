@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+	<div id="feedback" class="row">
+		<div class="large-12 columns">
+			<h3>We want your feedback!</h3>
+			<p>Help us make Spiderist more awesome.</p>
+			<%= form_for @message, :url => feedback_path, :html => { :honeypot => true } do |form| %>
+
+			    <div class="field">
+			      <%= form.text_area :body, :placeholder => 'Tell us what you like about the site, or what could use improvement.' %>
+			    </div>
+
+			    <%= form.submit "Send", :class => 'button small' %>
+
+			<% end %>
+		</div>
+	</div>
+<% end %>

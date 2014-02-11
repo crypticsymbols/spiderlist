@@ -1,0 +1,7 @@
+<% if (!@pager.blank?) %>
+	<ul class="pager inline-list large-centered large-4 columns">
+	<% @pager.each do |p| %>
+		<li><%= p %> </li>
+	<% end %>
+	</ul>
+<% end %>
