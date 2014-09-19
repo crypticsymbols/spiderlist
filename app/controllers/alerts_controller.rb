@@ -22,10 +22,6 @@ class AlertsController < ApplicationController
   # GET /alerts/1.json
   def show
 
-    ################################################
-    # Real show action
-    # @page = 
-
     self.display_results(params['page'])
 
     @title = 'Latest results '
