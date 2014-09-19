@@ -1,7 +1,6 @@
 class AlertsController < ApplicationController
   before_action :set_alert, only: [:show, :edit, :update, :destroy]
 
-  # 
   # Devise Auth
   before_filter :authenticate_user!, :load_tap
   
@@ -22,10 +21,6 @@ class AlertsController < ApplicationController
   # GET /alerts/1
   # GET /alerts/1.json
   def show
-
-    ################################################
-    # Real show action
-    # @page = 
 
     self.display_results(params['page'])
 
