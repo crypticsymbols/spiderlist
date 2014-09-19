@@ -1,7 +1,6 @@
 class AlertsController < ApplicationController
   before_action :set_alert, only: [:show, :edit, :update, :destroy]
 
-  # 
   # Devise Auth
   before_filter :authenticate_user!, :load_tap
   
